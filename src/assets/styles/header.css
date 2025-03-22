@@ -1,0 +1,48 @@
+.custom-header {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 64px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-menu {
+    flex: 1;
+    border-bottom: none;
+}
+
+.nav-menu .ant-menu-item a {
+    color: #555;
+    font-weight: 500;
+}
+
+.nav-menu .ant-menu-item-selected a {
+    color: #1890ff;
+    font-weight: bold;
+}
+
+.nav-menu .ant-menu-item:hover a {
+    color: #1890ff;
+}

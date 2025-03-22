@@ -1,0 +1,39 @@
+
+.broker-page {
+    background: #f5f5f5;
+    position: relative;
+    top: 55px;
+}
+
+.broker-container {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.broker-form {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+}
+
+.form-row > div {
+    flex: 1;
+}
+
+.ant-form-item {
+    margin-bottom: 12px;
+}
+
+

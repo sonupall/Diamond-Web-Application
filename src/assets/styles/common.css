@@ -1,0 +1,117 @@
+/* Table container */
+.custom-table-container {
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Table header */
+.ant-table-thead > tr > th {
+    background-color: #f5f7fa !important;
+    color: #8BA1B3 !important;
+
+    font-weight: 600;
+    text-align: left;
+    font-size: 14px !important;
+}
+
+/* Table body */
+.ant-table-tbody > tr > td {
+    padding: 20px !important;
+    font-size: 16px !important;
+    color:  #292929 !important;
+    text-align: left;
+    font-weight: 400 !important;
+    font-family: Poppins;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    color: white;
+}
+
+.delete-btn {
+    border: 1px solid #2169B2 !important;
+    color:  #2169B2 !important;
+    background-color: white !important;
+    padding: 16px;
+    border-radius: 6px;
+;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .ant-table {
+        font-size: 12px;
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+        padding: 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+    }
+}
+.custom-checkbox .ant-checkbox-inner {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    background-color: white; /* Default blank background when unchecked */
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for checked state */
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #2169B2; /* Updated blue when checked */
+    border-color: #2169B2;
+}
+
+/* Remove checkmark when unchecked */
+.custom-checkbox .ant-checkbox-inner::after {
+    display: none !important;
+}
+
+/* Show checkmark only when checked */
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+    display: block !important;
+}
+
+/* Ensure spacing remains consistent */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ant-form-item-label, label{
+color:  #0A1013 !important;
+    font-weight: 600;
+    font-size:14px;
+}
+
+.summary-table .ant-table-tbody > tr > td{
+padding: 5px !important;
+}
+.transaction-page{
+    top:254px !important
+}

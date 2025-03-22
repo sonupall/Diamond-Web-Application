@@ -1,0 +1,103 @@
+{
+  "brokers": [
+    {
+      "name": "Brady Schneider",
+      "email": "lawiga@mailinator.com",
+      "phone": "546545646546",
+      "address": "Voluptas numquam eum",
+      "brokerRate": "86",
+      "status": true,
+      "id": "0123"
+    },
+    {
+      "id": "e5cd",
+      "name": "Jade Sweeney",
+      "email": "zipiz@mailinator.com",
+      "phone": "452435245234523",
+      "address": "Officiis eligendi al",
+      "brokerRate": "17",
+      "status": true
+    }
+  ],
+  "diamonds": [
+    {
+      "stockNo": "Ratione ut vero volu",
+      "carat": "54",
+      "shape": "Ducimus alias cillu",
+      "color": "Obcaecati qui Nam oc",
+      "clarity": "Consequat Recusanda",
+      "rapPrice": "841",
+      "discount": "3",
+      "ppc": "866.23",
+      "totalAmount": "46776.42",
+      "id": "5f36"
+    },
+    {
+      "id": "63a3",
+      "stockNo": "Enim doloribus volup",
+      "carat": "66",
+      "shape": "Duis ullam non enim ",
+      "color": "Aut perspiciatis qu",
+      "clarity": "Esse autem numquam ",
+      "rapPrice": "215",
+      "discount": "60",
+      "ppc": "344.00",
+      "totalAmount": "22704.00"
+    },
+    {
+      "id": "b93e",
+      "stockNo": "Fugiat sed nobis qui",
+      "carat": "94",
+      "shape": "Esse perspiciatis d",
+      "color": "Maxime culpa quos i",
+      "clarity": "Ratione expedita nos",
+      "rapPrice": "257",
+      "discount": "58",
+      "ppc": "406.06",
+      "totalAmount": "38169.64"
+    },
+    {
+      "id": "f7c6",
+      "stockNo": "Suscipit id dolore ",
+      "carat": "64",
+      "shape": "Eum est tempor aspe",
+      "color": "Laboriosam quis max",
+      "clarity": "Dolore et duis iste ",
+      "rapPrice": "153",
+      "discount": "24",
+      "ppc": "189.72",
+      "totalAmount": "12142.08"
+    },
+    {
+      "id": "ebf5",
+      "stockNo": "Laborum asperiores a",
+      "carat": "66",
+      "shape": "Minim sit sed dolor ",
+      "color": "Exercitation et expl",
+      "clarity": "Aut totam et explica",
+      "rapPrice": "492",
+      "discount": "34",
+      "ppc": "659.28",
+      "totalAmount": "43512.48"
+    }
+  ],
+  "purchase": [
+    {
+      "id": "c5d1",
+      "diamonds": [
+        {
+          "id": "7ac8",
+          "stockNo": "Dicta aut maxime exc",
+          "carat": "16",
+          "shape": "Tempore aut qui mol",
+          "color": "Accusantium recusand",
+          "clarity": "Dolor similique qui ",
+          "rapPrice": "329",
+          "discount": "27",
+          "ppc": "417.83",
+          "totalAmount": "6685.28"
+        }
+      ]
+    }
+  ]
+}
