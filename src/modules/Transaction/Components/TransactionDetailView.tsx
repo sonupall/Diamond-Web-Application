@@ -11,6 +11,9 @@ import {
 } from "../slice/transactionSlice";
 
 const { Option } = Select;
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+
 
 const TransactionModule: React.FC = () => {
     const dispatch = useDispatch();
@@ -71,25 +74,6 @@ const TransactionModule: React.FC = () => {
         message.success("Purchase successful!");
     };
 
-    const handleDownloadInvoice = () => {
-        if (selectedDiamonds.length === 0) {
-            message.warning("Please select at least one diamond.");
-            return;
-        }
-
-        const doc = new jsPDF();
-        doc.text("Invoice Details", 10, 10);
-        doc.text(`Broker: ${selectedBroker?.name}`, 10, 20);
-        doc.text("Selected Diamonds:", 10, 30);
-
-        selectedDiamonds.forEach((diamond, index) => {
-            doc.text(`${index + 1}. ${diamond.name} - ${diamond.amount} USD`, 10, 40 + index * 10);
-        });
-
-        doc.save("invoice.pdf");
-        message.success("Invoice downloaded successfully!");
-    };
-
     const handleSendInvoiceEmail = async () => {
         if (selectedDiamonds.length === 0) {
             message.warning("Please select at least one diamond.");
@@ -107,6 +91,44 @@ const TransactionModule: React.FC = () => {
             message.error("Failed to send invoice email.");
         }
     };
+
+    const handleDownloadInvoice = () => {
+        if (selectedDiamonds.length === 0) {
+            message.warning("Please select at least one diamond before downloading.");
+            return;
+        }
+
+        const doc = new jsPDF();
+
+        // Add Title
+        doc.setFontSize(18);
+        doc.text("Invoice", 14, 20);
+
+        // Add Broker Details
+        doc.setFontSize(12);
+        doc.text(`Broker Name: ${selectedBroker.name}`, 14, 30);
+        doc.text(`Email: ${selectedBroker.email}`, 14, 40);
+        doc.text(`Phone: ${selectedBroker.phone}`, 14, 50);
+        doc.text(`Address: ${selectedBroker.address}`, 14, 60);
+        // Table for Diamonds
+        const tableColumn = ["ID", "Carats", "Amount", "Quantity"];
+        const tableRows = selectedDiamonds.map((diamond) => [
+            diamond.id,
+            diamond.carat,
+            diamond.totalAmount,
+            5,
+        ]);
+
+        autoTable(doc, {
+            head: [tableColumn],
+            body: tableRows,
+            startY: 70,
+        });
+
+        // Save PDF
+        doc.save(`Invoice_${selectedBroker.name}.pdf`);
+    };
+
     return (
         <div style={{ padding: "20px", background: "#f8f9fc", borderRadius: "8px" }}>
             {loading ? (
@@ -162,7 +184,7 @@ const TransactionModule: React.FC = () => {
                                 </Select>
                             </div>
                             <Button type="primary" onClick={handlePurchase}>Purchase</Button>
-                            <Button  className='delete-btn' onClick={handleDownloadInvoice}>
+                            <Button  className='delete-btn' onClick={()=>handleDownloadInvoice()}>
                                 Download
                             </Button>
                             <Button type="dashed" onClick={handleSendInvoiceEmail}>

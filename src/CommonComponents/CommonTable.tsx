@@ -75,14 +75,24 @@ const CommonTable: React.FC<CommonTableProps> = ({
             ]
             : []),
     ];
-
+    const modifiedRowSelection = rowSelection
+        ? {
+            type: "radio",
+            selectedRowKeys: rowSelection.selectedRowKeys,
+            onChange: rowSelection.onChange,
+            getCheckboxProps: (record: TableRow) => ({
+                disabled: false, // Ensure radio is not disabled
+            }),
+        }
+        : undefined;
     return (
         <div className="custom-table-container">
             <Table
-                rowSelection={rowSelection}
+                rowKey="key"
+                rowSelection={modifiedRowSelection}
                 columns={tableColumns}
                 dataSource={data}
-                pagination={{ pageSize: 5 }}
+                pagination={{ pageSize: 10 }}
                 bordered
             />
         </div>
